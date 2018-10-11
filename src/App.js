@@ -5,6 +5,13 @@ import Home from "./pages/home";
 import About from "./pages/about";
 
 class App extends React.Component {
+  state = {
+    todos: [],
+    };
+
+  infoFromAbout = (edits) => {
+    todos: edits
+  }
   render() {
     return (
       <Router>
@@ -12,11 +19,14 @@ class App extends React.Component {
           <Link to="/">Home</Link>
           <p> </p>
           <Link to="/about">About</Link>
-
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
+          <about calling={this.infoFromAbout}/>
         </div>
       </Router>
+      // <div>
+
+      // </div>
     );
   }
 }
